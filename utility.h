@@ -1,9 +1,7 @@
 // utility.h
 
-// IN THIS FILE, declare (function prototype only) any of your 
-// OWN functions you may need to solve the problems.    
-
-// You will need to include the function prototype in "utility.h" and
-// then be sure to  #include "utility.h" in the file where you use
-// these functions
+double approxEqual(double a, double b);
+//Pre: Takes in two parameters of type double
+//This function evaluates the absolute difference between a and b
+//Post: The absolute value of the difference is returned.
 
