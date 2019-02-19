@@ -58,9 +58,6 @@ string boxToString(Box b, int precision) {
 bool pointsApproxEqual(Point p1, 
 		       Point p2, 
 		       double tolerance) {
-  // Two points are approximately equal if the distance between them
-  // is less than our tolerance.  (If we want to test for 
-  // exact equality, we can pass in a value of zero.)
 
   return distanceBetween(p1,p2) < tolerance;
 
@@ -79,16 +76,6 @@ bool boxesApproxEqual(Box b1, Box b2, double tolerance)
 	}return false;
 }
 
-
-// Now write a function to initialize a box.
-// You'll need to initialize the upper left x and y,
-// the width and the height.
-// Note: there is a struct Point inside the struct Box.
-// So here's a clue: For the x value, use (*b).ul.x or (b->ul).x 
-//  The y value is similar.
-// There is also a way to "reuse" initPoint, if you are feeling 
-//  confident in your understanding of pointers and structs.
-
 void initBox(struct Box *b, double ulx, double uly, double w, double h)
 {
 	(*b).ul.x = ulx;
@@ -97,7 +84,7 @@ void initBox(struct Box *b, double ulx, double uly, double w, double h)
 	(*b).height = h;
 }
 
-double areaOfBox(Box b) {
-  return -42.0;  /* stub---make sure all tests fail initially */
-  // you can use b.width to access width, and b.height to access height
+double areaOfBox(Box b) 
+{
+  return b.width * b.height; 
 }
